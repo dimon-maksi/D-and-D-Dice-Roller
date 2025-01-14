@@ -6,7 +6,7 @@ import Options from './components/Options';
 
 function App() {
   return (
-    <div className="bg-primary p-4 h-screen flex gap-4">
+    <div className="bg-primary p-4 h-screen flex gap-4 overflow-hidden">
       <div className="column hidden lg:flex lg:w-[15%]">
         <History />
       </div>
