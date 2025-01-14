@@ -1,12 +1,9 @@
-import React, { Component } from "react";
+import React from 'react'
 
-export class Dices extends Component {
-  render() {
-    return (
-        <div>Dices</div>
-
-    );
-  }
+const Dices = () => {
+  return (
+    <div>Dices</div>
+  )
 }
 
-export default Dices;
+export default Dices
