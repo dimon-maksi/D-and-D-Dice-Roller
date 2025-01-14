@@ -3,9 +3,5 @@
 @tailwind utilities;
 
 .column {
-  @apply rounded-md flex-1  flex flex-col items-center;
-}
-
-.column-side {
-    @apply max-w-xs;
+  @apply rounded-md bg-secondary-100 text-primary;
 }

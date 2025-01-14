@@ -6,15 +6,15 @@ import Options from './components/Options';
 
 function App() {
   return (
-    <div className="bg-gray-800 text-white p-4 h-screen flex gap-4">
-      <div className="column column-side flex-shrink-0">
+    <div className="bg-primary p-4 h-screen flex gap-4">
+      <div className="column hidden lg:flex lg:w-[25%]">
         <History />
       </div>
-      <div className="bg-white text-gray-800 column flex-grow">
-        <h1 className="text-8xl font-bold">D&D Dice Roller</h1>
+      <div className="column lg:w-[50%] w-2/3 text-center">
+        <h1 className="text-4xl lg:text-6xl font-bold py-4">D&D Dice Roller</h1>
         <Dices />
       </div>
-      <div className="column column-side flex-shrink-0">
+      <div className="column flex lg:w-[25%] w-1/3">
         <Options />
       </div>
     </div>
