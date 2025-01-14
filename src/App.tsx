@@ -10,11 +10,11 @@ function App() {
       <div className="column hidden lg:flex lg:w-[15%]">
         <History />
       </div>
-      <div className="column lg:w-[60%] w-2/3 text-center">
+      <div className="column lg:w-[70%] w-2/3 text-center">
         <h1 className="text-4xl lg:text-6xl font-bold py-4">D&D Dice Roller</h1>
         <Dices />
       </div>
-      <div className="column flex lg:w-[25%] w-1/3">
+      <div className="column flex lg:w-[15%] w-1/3">
         <Options />
       </div>
     </div>

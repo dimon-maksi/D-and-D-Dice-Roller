@@ -40,7 +40,7 @@ const History = () => {
   ];
 
   return (
-    <div className="bg-secondary-200 m-2 p-2 w-full rounded-lg overflow-scroll">
+    <div className="secondary-column">
       <ul>
         {historyItems.map((item, index) => (
           <li className="pb-1" key={index}>

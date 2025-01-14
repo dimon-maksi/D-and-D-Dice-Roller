@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
 .column {
   @apply rounded-md bg-secondary-100 text-primary;
+}
+
+.secondary-column {
+  @apply bg-secondary-200 m-2 p-2 w-full rounded-lg overflow-scroll;
+}
+
+.button {
+  @apply flex-1 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
