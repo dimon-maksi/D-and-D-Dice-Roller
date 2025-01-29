@@ -8,6 +8,9 @@ A simple web app to roll different types of dice for tabletop RPGs like Dungeons
 - Ability to input custom dice formulas (e.g., `2d6 + 3`).
 
 ## Schematic UI
+![image](https://github.com/user-attachments/assets/0687f5f2-af8e-4d0c-9eeb-7935b9aa1394)
+
+## Schematic UI
 ![DnD-Dice-Roller](https://github.com/user-attachments/assets/6acc601b-8276-4b19-b748-4b63045db28c)
 
 ## Technologies Used
