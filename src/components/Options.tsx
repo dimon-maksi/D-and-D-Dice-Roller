@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import NumberSection from "./NumberSection";
+import ResultProps from './Types'
 
-const Options = () => {
+interface OptionsProps {
+  setRolls: React.Dispatch<React.SetStateAction<ResultProps[]>>;
+}
+
+const Options : React.FC<OptionsProps> = ({ setRolls }) => {
+    const handleRoll = () => {
+    const newRoll = { formula: "d20+3", result: 10 };
+
+    setRolls((prevRolls) => [...prevRolls, newRoll]);
+  };
+
   return (
     <div className="secondary-column">
       <h1 className="text-2xl font-bold mb-4">Options</h1>
@@ -19,7 +30,7 @@ const Options = () => {
       <NumberSection dice="d20" />
       
       <div className="flex space-x-0 rounded-md overflow-hidden shadow-sm">
-        <button className="button bg-indigo-500 text-white hover:bg-indigo-600 focus:ring-indigo-500">
+        <button onClick={handleRoll} className="button bg-indigo-500 text-white hover:bg-indigo-600 focus:ring-indigo-500">
           Roll
         </button>
         <div className="w-px bg-gray-300"></div>

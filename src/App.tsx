@@ -1,21 +1,32 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import History from './components/History';
 import Dices from './components/Dices';
 import Options from './components/Options';
+import ResultProps from './components/Types';
+
+const getStoredItems = (): ResultProps[] => {
+  return JSON.parse(localStorage.getItem('rolls') || '[]');
+};
 
 function App() {
+  const [rolls, setRolls] = useState<ResultProps[]>(getStoredItems);
+
+  useEffect(() => {
+    localStorage.setItem("rolls", JSON.stringify(rolls));
+  }, [rolls]);
+
   return (
     <div className="bg-primary p-4 h-screen flex gap-4 overflow-hidden">
       <div className="column hidden lg:flex lg:w-[15%]">
-        <History />
+        <History rolls={rolls} />
       </div>
       <div className="column lg:w-[70%] w-2/3 text-center">
         <h1 className="text-4xl lg:text-6xl font-bold py-4">D&D Dice Roller</h1>
         <Dices />
       </div>
       <div className="column flex lg:w-[15%] w-1/3">
-        <Options />
+        <Options setRolls={setRolls}/>
       </div>
     </div>
   );

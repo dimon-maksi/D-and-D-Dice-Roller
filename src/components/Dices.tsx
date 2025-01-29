@@ -13,22 +13,6 @@ const mockDices: Dice[] = [
   { type: 'd4', value: 0 },
   { type: 'd4', value: 0 },
   { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
-  { type: 'd4', value: 0 },
 ];
 
 const Dices = () => {

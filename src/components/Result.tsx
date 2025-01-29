@@ -1,10 +1,6 @@
 import React from 'react'
-//import PropTypes from 'prop-types'
+import ResultProps from './Types'
 
-interface ResultProps {
-    formula: string;
-    result: number;
-}
 
 const Result: React.FC<ResultProps> = ({ formula, result }) => {
     return (

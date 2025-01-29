@@ -1,53 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import Result from "./Result";
+import ResultProps from './Types'
 
-const History = () => {
+interface HistoryProps {
+  rolls: ResultProps[];
+}
 
-  const historyItems = [
-    { formula: "2d6 + 4d12 + 10d8 + 4d12 + 10d8 + 4d12 + 10d8 + 3", result: -4 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-    { formula: "2d6 + 3", result: 10 },
-    { formula: "1d20", result: 15 },
-    { formula: "3d8 - 1", result: 20 },
-  ];
-
+const History : React.FC<HistoryProps> = ({ rolls }) => {
   return (
     <div className="secondary-column">
       <ul>
-        {historyItems.map((item, index) => (
+        {rolls.slice(0).reverse().map((item, index) => (
           <li className="pb-1" key={index}>
-            <Result formula={item.formula} result={item.result} />
+        <Result formula={item.formula} result={item.result} />
           </li>
         ))}
       </ul>
+      
     </div>
   );
 };
