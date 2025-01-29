@@ -7,6 +7,10 @@ interface NumberSectionProps {
 }
 
 const NumberSection: React.FC<NumberSectionProps> = ({ dice, value, setDiceCounts }) => {
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    e.target.select();
+  };
+
   return (
     <div className="mb-4">
         <label className="flex items-center space-x-2 font-bold text-4xl text-primary">
@@ -22,6 +26,7 @@ const NumberSection: React.FC<NumberSectionProps> = ({ dice, value, setDiceCount
               [dice]: Math.min(99, Math.max(0, Number(e.target.value) || 0)),
             }))
           }
+          onFocus={handleFocus}
         /> 
         <div className=''>{dice}</div>
         </label>

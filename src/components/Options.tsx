@@ -44,6 +44,10 @@ const Options: React.FC<OptionsProps> = ({ setRolls, setDices }) => {
     setDices(Dices);
   };
 
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+      e.target.select();
+    };
+
   return (
     <div className="secondary-column">
       <h1 className="text-2xl font-bold mb-4">Options</h1>
@@ -57,6 +61,7 @@ const Options: React.FC<OptionsProps> = ({ setRolls, setDices }) => {
           className="mt-1 mr-2 block size-16 text-3xl text-center rounded-md shadow-sm focus:outline-none sm:ml-4"
           value={modifier}
           onChange={(e) => setModifier(Number(e.target.value))}
+          onFocus={handleFocus}
         />
       </div>
 
