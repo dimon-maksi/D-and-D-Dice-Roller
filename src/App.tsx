@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import History from './components/History';
 import Dices from './components/Dices';
 import Options from './components/Options';

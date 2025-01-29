@@ -1,5 +1,5 @@
 import React from 'react'
-import ResultProps from './Types'
+import { ResultProps } from './Types'
 
 
 const Result: React.FC<ResultProps> = ({ formula, result }) => {
