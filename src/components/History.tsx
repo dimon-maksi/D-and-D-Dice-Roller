@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Result from "./Result";
-import ResultProps from './Types'
+import {ResultProps} from './Types'
 
 interface HistoryProps {
   rolls: ResultProps[];

@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import NumberSection from "./NumberSection";
-import ResultProps from './Types'
+import { Dice, ResultProps } from "./Types";
 
 interface OptionsProps {
   setRolls: React.Dispatch<React.SetStateAction<ResultProps[]>>;
+  setDices: React.Dispatch<React.SetStateAction<Dice[]>>;
 }
 
 const diceTypes = ["d4", "d6", "d8", "d10", "d12", "d20"];
 
-const Options: React.FC<OptionsProps> = ({ setRolls }) => {
+const Options: React.FC<OptionsProps> = ({ setRolls, setDices }) => {
   const [diceCounts, setDiceCounts] = useState<Record<string, number>>(
     diceTypes.reduce((acc, dice) => ({ ...acc, [dice]: 0 }), {})
   );
@@ -17,13 +18,16 @@ const Options: React.FC<OptionsProps> = ({ setRolls }) => {
   const handleRoll = () => {
     let formula = "";
     let result = modifier;
+    const Dices: Dice[] = [];
 
     diceTypes.forEach((dice) => {
       const count = diceCounts[dice];
       if (count > 0) {
         formula += `${count}${dice} + `;
         for (let i = 0; i < count; i++) {
-          result += Math.floor(Math.random() * parseInt(dice.substring(1))) + 1;
+          const rollResult = Math.floor(Math.random() * parseInt(dice.substring(1))) + 1;
+          result += rollResult;
+          Dices.push({ type: dice, value: rollResult });
         }
       }
     });
@@ -37,6 +41,7 @@ const Options: React.FC<OptionsProps> = ({ setRolls }) => {
     }
 
     setRolls((prevRolls) => [...prevRolls, { formula, result }]);
+    setDices(Dices);
   };
 
   return (

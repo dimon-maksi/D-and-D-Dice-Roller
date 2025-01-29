@@ -3,4 +3,9 @@ type ResultProps = {
     result: number;
   };
 
-  export default ResultProps;
+  type Dice = {
+    type: string;
+    value: number;
+  }
+
+  export type { ResultProps, Dice };
