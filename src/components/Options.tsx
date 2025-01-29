@@ -44,6 +44,11 @@ const Options: React.FC<OptionsProps> = ({ setRolls, setDices }) => {
     setDices(Dices);
   };
 
+  const handleReset = () => {
+    setDiceCounts(diceTypes.reduce((acc, dice) => ({ ...acc, [dice]: 0 }), {}));
+    setModifier(0);
+  }
+
   const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
       e.target.select();
     };
@@ -83,9 +88,7 @@ const Options: React.FC<OptionsProps> = ({ setRolls, setDices }) => {
         </button>
         <div className="w-px bg-gray-300"></div>
         <button
-          onClick={() =>
-            setDiceCounts(diceTypes.reduce((acc, dice) => ({ ...acc, [dice]: 0 }), {}))
-          }
+          onClick={handleReset}
           className="button bg-gray-300 text-gray-700 hover:bg-gray-400 focus:ring-gray-500"
         >
           Reset
